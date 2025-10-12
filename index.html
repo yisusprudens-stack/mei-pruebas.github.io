@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio Profesional - [Tu Nombre]</title>
+    <!-- Carga de Tailwind CSS CDN para un diseño moderno y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Estilo para los iconos de Font Awesome (usados como ejemplo de redes sociales) */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+        
+        /* Pequeño ajuste para scroll-margin al usar la barra de navegación */
+        section {
+            scroll-margin-top: 5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Barra de Navegación (Fija) -->
+    <header class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-sm shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Nombre/Logo del Portafolio -->
+                <a href="#inicio" class="text-2xl font-bold text-indigo-400 hover:text-indigo-300 transition duration-300">
+                    &lt;TuPerfil /&gt;
+                </a>
+                
+                <!-- Navegación Principal -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-gray-300 hover:text-indigo-400 transition duration-300">Inicio</a>
+                    <a href="#sobre-mi" class="text-gray-300 hover:text-indigo-400 transition duration-300">Sobre Mí</a>
+                    <a href="#habilidades" class="text-gray-300 hover:text-indigo-400 transition duration-300">Habilidades</a>
+                    <a href="#proyectos" class="text-gray-300 hover:text-indigo-400 transition duration-300">Proyectos</a>
+                    <a href="#contacto" class="text-gray-300 hover:text-indigo-400 transition duration-300">Contacto</a>
+                </nav>
+
+                <!-- Botón de Menú Móvil (oculto por defecto) -->
+                <button id="menu-button" class="md:hidden text-gray-400 hover:text-white focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Menú Móvil (Oculto por defecto) -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#inicio" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Inicio</a>
+                <a href="#sobre-mi" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Sobre Mí</a>
+                <a href="#habilidades" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Habilidades</a>
+                <a href="#proyectos" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Proyectos</a>
+                <a href="#contacto" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de Inicio (Hero) -->
+    <section id="inicio" class="py-24 md:py-36 text-center bg-gray-800 border-b border-gray-700">
+        <div class="max-w-4xl mx-auto px-4">
+            <!-- Imagen de Perfil -->
+            <img 
+                class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-indigo-500 shadow-xl"
+                src="https://placehold.co/128x128/1F2937/FFFFFF?text=FOTO" 
+                alt="Foto de Perfil"
+                onerror="this.src='https://placehold.co/128x128/1F2937/FFFFFF?text=FOTO'"
+            >
+            
+            <!-- Título Principal -->
+            <h1 class="mt-6 text-5xl font-extrabold tracking-tight sm:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">
+                Hola, soy [Tu Nombre]
+            </h1>
+            
+            <!-- Subtítulo / Rol -->
+            <p class="mt-3 text-2xl font-medium text-gray-300">
+                [Tu Título Profesional] | [Diseñador UX/Desarrollador Web/Consultor/etc.]
+            </p>
+            
+            <!-- Descripción Corta -->
+            <p class="mt-5 text-lg text-gray-400 max-w-2xl mx-auto">
+                Apasionado por crear soluciones digitales elegantes y eficientes. Mi enfoque se centra en la innovación y en ofrecer valor a través de proyectos impactantes.
+            </p>
+            
+            <!-- Botones de Acción -->
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+                <a href="URL_DE_TU_CV" target="_blank" class="px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
+                    Descargar CV (PDF)
+                </a>
+                <a href="#contacto" class="px-6 py-3 border border-indigo-600 text-base font-medium rounded-lg shadow-sm text-indigo-400 bg-gray-700 hover:bg-gray-600 transition duration-300 transform hover:scale-105">
+                    Hablemos de tu Proyecto
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Mí -->
+    <section id="sobre-mi" class="py-20 md:py-28">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-extrabold text-center text-indigo-400 mb-12">
+                Sobre Mí
+            </h2>
+            <div class="bg-gray-800 p-8 rounded-xl shadow-2xl border border-gray-700">
+                <p class="text-lg text-gray-300 leading-relaxed mb-4">
+                    Comencé mi carrera en [Área de inicio] hace más de 5 años. Mi misión siempre ha sido [Tu Misión o Filosofía]. Me especializo en la intersección de [Área A] y [Área B], asegurando que cada proyecto no solo cumpla con los requisitos técnicos, sino que también ofrezca una experiencia de usuario excepcional.
+                </p>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    Fuera del trabajo, disfruto de [Menciona un pasatiempo relevante] y me mantengo actualizado con las últimas tendencias en [Tu industria]. Creo firmemente que el aprendizaje continuo es la clave para el éxito en el mundo digital.
+                </p>
+            </div>
+            <!-- Redes Sociales -->
+            <div class="mt-10 text-center">
+                <h3 class="text-2xl font-semibold text-gray-200 mb-4">Conéctate Conmigo</h3>
+                <div class="flex justify-center space-x-6">
+                    <!-- GitHub -->
+                    <a href="TU_URL_GITHUB" target="_blank" class="text-gray-400 hover:text-indigo-400 transition duration-300">
+                        <i class="fab fa-github text-3xl"></i>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="TU_URL_LINKEDIN" target="_blank" class="text-gray-400 hover:text-indigo-400 transition duration-300">
+                        <i class="fab fa-linkedin-in text-3xl"></i>
+                    </a>
+                    <!-- Dribbble/Behance/Otro (Cambia el icono si es necesario) -->
+                    <a href="TU_URL_OTRA_RED" target="_blank" class="text-gray-400 hover:text-indigo-400 transition duration-300">
+                        <i class="fas fa-globe text-3xl"></i> 
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Habilidades (Skills) -->
+    <section id="habilidades" class="py-20 md:py-28 bg-gray-800 border-y border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-extrabold text-center text-indigo-400 mb-12">
+                Mis Habilidades
+            </h2>
+            <!-- Grid de Habilidades (Añade o quita según tu perfil) -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
+                
+                <!-- Habilidad 1: Desarrollo Web Frontend -->
+                <div class="p-6 bg-gray-900 rounded-xl shadow-lg border border-indigo-600/30 transform hover:scale-105 transition duration-300">
+                    <i class="fas fa-code text-5xl text-indigo-400 mb-3"></i>
+                    <h3 class="text-lg font-semibold text-gray-100">Frontend</h3>
+                    <p class="text-sm text-gray-400">React, Vue.js, HTML5, CSS3</p>
+                </div>
+
+                <!-- Habilidad 2: Diseño UX/UI -->
+                <div class="p-6 bg-gray-900 rounded-xl shadow-lg border border-indigo-600/30 transform hover:scale-105 transition duration-300">
+                    <i class="fas fa-drafting-compass text-5xl text-indigo-400 mb-3"></i>
+                    <h3 class="text-lg font-semibold text-gray-100">UX/UI Design</h3>
+                    <p class="text-sm text-gray-400">Figma, Sketch, Prototipado</p>
+                </div>
+                
+                <!-- Habilidad 3: Desarrollo Backend -->
+                <div class="p-6 bg-gray-900 rounded-xl shadow-lg border border-indigo-600/30 transform hover:scale-105 transition duration-300">
+                    <i class="fas fa-server text-5xl text-indigo-400 mb-3"></i>
+                    <h3 class="text-lg font-semibold text-gray-100">Backend</h3>
+                    <p class="text-sm text-gray-400">Node.js, Python, Bases de datos</p>
+                </div>
+                
+                <!-- Habilidad 4: Gestión de Proyectos -->
+                <div class="p-6 bg-gray-900 rounded-xl shadow-lg border border-indigo-600/30 transform hover:scale-105 transition duration-300">
+                    <i class="fas fa-tasks text-5xl text-indigo-400 mb-3"></i>
+                    <h3 class="text-lg font-semibold text-gray-100">Gestión</h3>
+                    <p class="text-sm text-gray-400">Scrum, Agile, Jira, Trello</p>
+                </div>
+
+                <!-- Habilidad 5: Cloud/DevOps -->
+                <div class="p-6 bg-gray-900 rounded-xl shadow-lg border border-indigo-600/30 transform hover:scale-105 transition duration-300">
+                    <i class="fas fa-cloud text-5xl text-indigo-400 mb-3"></i>
+                    <h3 class="text-lg font-semibold text-gray-100">Cloud</h3>
+                    <p class="text-sm text-gray-400">AWS, Docker, CI/CD</p>
+                </div>
+                
+                <!-- Habilidad 6: Idiomas/Otros -->
+                <div class="p-6 bg-gray-900 rounded-xl shadow-lg border border-indigo-600/30 transform hover:scale-105 transition duration-300">
+                    <i class="fas fa-language text-5xl text-indigo-400 mb-3"></i>
+                    <h3 class="text-lg font-semibold text-gray-100">Idiomas</h3>
+                    <p class="text-sm text-gray-400">Español, Inglés (C1)</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Proyectos -->
+    <section id="proyectos" class="py-20 md:py-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-extrabold text-center text-indigo-400 mb-12">
+                Mis Proyectos Destacados
+            </h2>
+            
+            <!-- Grid de Proyectos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Tarjeta de Proyecto 1 -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden shadow-2xl border border-gray-700 hover:shadow-indigo-500/20 transition duration-500">
+                    <img class="w-full h-48 object-cover" src="https://placehold.co/600x400/374151/FFFFFF?text=Proyecto+A" alt="Imagen del Proyecto A">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-100 mb-2">Proyecto de E-Commerce</h3>
+                        <p class="text-gray-400 mb-4 text-sm">
+                            Plataforma de comercio electrónico construida con MERN Stack. Implementé autenticación de usuarios, pasarela de pago Stripe y un panel de administración.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-xs font-medium mb-4">
+                            <span class="px-2 py-1 bg-indigo-600/50 rounded-full text-indigo-200">React</span>
+                            <span class="px-2 py-1 bg-indigo-600/50 rounded-full text-indigo-200">Node.js</span>
+                            <span class="px-2 py-1 bg-indigo-600/50 rounded-full text-indigo-200">MongoDB</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="URL_DEMO_PROYECTO_1" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-semibold transition duration-300">
+                                Ver Demo <i class="fas fa-external-link-alt ml-1 text-sm"></i>
+                            </a>
+                            <a href="URL_GITHUB_PROYECTO_1" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Proyecto 2 -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden shadow-2xl border border-gray-700 hover:shadow-indigo-500/20 transition duration-500">
+                    <img class="w-full h-48 object-cover" src="https://placehold.co/600x400/374151/FFFFFF?text=Proyecto+B" alt="Imagen del Proyecto B">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-100 mb-2">App Móvil de Productividad</h3>
+                        <p class="text-gray-400 mb-4 text-sm">
+                            Aplicación móvil para la gestión de tareas y tiempo, desarrollada con React Native. Incluye notificaciones push y sincronización en tiempo real.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-xs font-medium mb-4">
+                            <span class="px-2 py-1 bg-indigo-600/50 rounded-full text-indigo-200">React Native</span>
+                            <span class="px-2 py-1 bg-indigo-600/50 rounded-full text-indigo-200">Firebase</span>
+                            <span class="px-2 py-1 bg-indigo-600/50 rounded-full text-indigo-200">UX/UI</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="URL_DEMO_PROYECTO_2" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-semibold transition duration-300">
+                                Ver Demo <i class="fas fa-external-link-alt ml-1 text-sm"></i>
+                            </a>
+                            <a href="URL_GITHUB_PROYECTO_2" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tarjeta de Proyecto 3 -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden shadow-2xl border border-gray-700 hover:shadow-indigo-500/20 transition duration-500">
+                    <img class="w-full h-48 object-cover" src="https://placehold.co/600x400/374151/FFFFFF?text=Proyecto+C" alt="Imagen del Proyecto C">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-100 mb-2">Panel de Analíticas de Datos</h3>
+                        <p class="text-gray-400 mb-4 text-sm">
+                            Visualización interactiva de grandes conjuntos de datos usando D3.js y un backend basado en Python (Flask).
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-xs font-medium mb-4">
+                            <span class="px-2 py-1 bg-indigo-600/50 rounded-full text-indigo-200">Python</span>
+                            <span class="px-2 py-1 bg-indigo-600/50 rounded-full text-indigo-200">D3.js</span>
+                            <span class="px-2 py-1 bg-indigo-600/50 rounded-full text-indigo-200">Análisis</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="URL_DEMO_PROYECTO_3" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-semibold transition duration-300">
+                                Ver Demo <i class="fas fa-external-link-alt ml-1 text-sm"></i>
+                            </a>
+                            <a href="URL_GITHUB_PROYECTO_3" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="URL_A_TODOS_TUS_PROYECTOS_O_GITHUB" target="_blank" class="px-8 py-3 border border-indigo-600 text-base font-medium rounded-lg shadow-sm text-indigo-400 bg-gray-700 hover:bg-gray-600 transition duration-300">
+                    Ver Todos los Proyectos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="py-20 md:py-28 bg-gray-800 border-t border-gray-700">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-extrabold text-indigo-400 mb-4">
+                ¿Tienes un Proyecto en Mente?
+            </h2>
+            <p class="text-lg text-gray-400 mb-10">
+                Me encantaría saber de ti. Ponte en contacto para discutir oportunidades de colaboración o empleo.
+            </p>
+
+            <div class="flex flex-col space-y-6 md:flex-row md:space-y-0 md:space-x-8 justify-center mb-10">
+                <!-- Email -->
+                <div class="flex items-center justify-center p-4 bg-gray-900 rounded-lg shadow-xl border border-indigo-600/30">
+                    <i class="fas fa-envelope text-indigo-400 text-2xl mr-3"></i>
+                    <div>
+                        <p class="text-sm text-gray-400">Email</p>
+                        <a href="mailto:tu.email@example.com" class="text-lg font-medium text-gray-200 hover:text-indigo-400">
+                            tu.email@example.com
+                        </a>
+                    </div>
+                </div>
+                <!-- Teléfono (Opcional) -->
+                <div class="flex items-center justify-center p-4 bg-gray-900 rounded-lg shadow-xl border border-indigo-600/30">
+                    <i class="fas fa-phone-alt text-indigo-400 text-2xl mr-3"></i>
+                    <div>
+                        <p class="text-sm text-gray-400">Teléfono</p>
+                        <a href="tel:+34123456789" class="text-lg font-medium text-gray-200 hover:text-indigo-400">
+                            +34 123 456 789
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario de Contacto (NOTA IMPORTANTE) -->
+            <div class="bg-gray-900 p-8 rounded-xl shadow-2xl border border-gray-700 text-left">
+                <h3 class="text-2xl font-bold text-gray-100 mb-6 text-center">Envía un Mensaje Directo</h3>
+                <!-- 
+                    NOTA IMPORTANTE SOBRE EL FORMULARIO: 
+                    Para que un formulario en una página web estática funcione sin código backend, 
+                    necesitas un servicio externo gratuito como Formspree (https://formspree.io/) o Netlify Forms. 
+                    Añade el action="URL_DE_FORMSPREE_AQUI" para habilitarlo.
+                -->
+                <form action="URL_DE_TU_SERVICIO_DE_FORMULARIOS" method="POST">
+                    <div class="mb-4">
+                        <label for="nombre" class="block text-sm font-medium text-gray-300 mb-1">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required class="w-full px-4 py-2 rounded-lg bg-gray-700 text-white border border-gray-600 focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                        <input type="email" id="email" name="_replyto" required class="w-full px-4 py-2 rounded-lg bg-gray-700 text-white border border-gray-600 focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                    <div class="mb-6">
+                        <label for="mensaje" class="block text-sm font-medium text-gray-300 mb-1">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required class="w-full px-4 py-2 rounded-lg bg-gray-700 text-white border border-gray-600 focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                    </div>
+                    <button type="submit" class="w-full px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
+                        Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de Página (Footer) -->
+    <footer class="bg-gray-900 border-t border-gray-700">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-500 text-sm">
+                &copy; 2024 [Tu Nombre]. Todos los derechos reservados. | Desarrollado con HTML y Tailwind CSS.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Script para el menú móvil -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = mobileMenu.querySelectorAll('a');
+
+            // Toggle del menú
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Cerrar menú al hacer clic en un enlace (en móvil)
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
