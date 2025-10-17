@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Mi Querida Mei ❤️</title>
+    <title>Para Mi Querida Mei - Nivel 2</title>
     <!-- Carga de Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Carga de la fuente Sacramento para un toque romántico y Lucide para iconos -->
@@ -47,17 +47,17 @@
             display: inline-block;
         }
         
-        /* Animación de aparición para el resultado */
+        /* Animación de aparición para el resultado/puzle */
         @keyframes reveal {
             0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
         }
-        .clue-reveal {
+        .puzzle-reveal {
             animation: reveal 1.5s ease-out forwards;
         }
 
         /* Estilo para el contenedor de la pista */
-        .clue-box {
+        .puzzle-box {
             background-color: white;
             border: 3px solid var(--pink-romantic);
             box-shadow: 0 10px 30px rgba(255, 105, 180, 0.4);
@@ -72,6 +72,20 @@
         }
         .correct { color: #10b981; } /* Verde esmeralda */
         .incorrect { color: #ef4444; } /* Rojo */
+
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            .question-card input, .question-card button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .question-card .flex {
+                flex-direction: column;
+            }
+            .status-icon {
+                margin: 10px 0 0 0;
+            }
+        }
     </style>
 </head>
 <body class="font-inter">
@@ -82,21 +96,21 @@
         <!-- Cabecera Romántica -->
         <header class="text-center mb-8">
             <h1 class="font-sacramento text-6xl text-rose-red mb-2 animate-pulse">
-                Mi Querida Mei <span class="heartbeat" style="color: var(--pink-romantic);">❤️</span>
+                Segundo Nivel, Mei <span class="heartbeat" style="color: var(--pink-romantic);">❤️</span>
             </h1>
             <p class="text-gray-600 text-lg">
-                ¡Demuéstrame cuánto me quieres recordando estas tres cositas!
+                ¡Demuéstrame que prestas atención a nuestro futuro gatuno y nuestros planes de viaje!
             </p>
         </header>
 
         <!-- Contenedor del Quiz -->
         <main id="quiz-container">
-            <!-- Pregunta 1: Números Favoritos -->
+            <!-- Pregunta 1: Número Máximo de Gatos -->
             <div id="q1" class="mb-6 p-5 bg-pink-50 rounded-xl shadow-lg border-l-4 border-rose-500">
-                <h2 class="text-xl font-semibold text-rose-600 mb-2">1. La Suma de Nuestros Números</h2>
-                <p class="text-sm text-gray-700 mb-3">¿Cuál es la **suma de nuestros números favoritos**?</p>
+                <h2 class="text-xl font-semibold text-rose-600 mb-2">1. La Familia Gatuna</h2>
+                <p class="text-sm text-gray-700 mb-3">¿Cuántos gatos **MÁXIMO** vamos a tener en casa?</p>
                 <div class="flex items-center space-x-3">
-                    <input type="number" id="q1-input" placeholder="Introduce el número" class="flex-grow p-2 border-2 border-pink-200 rounded-lg focus:ring-rose-500 focus:border-rose-500 transition">
+                    <input type="text" id="q1-input" placeholder="Escribe el número o la palabra" class="flex-grow p-2 border-2 border-pink-200 rounded-lg focus:ring-rose-500 focus:border-rose-500 transition">
                     <button onclick="checkAnswer(1)" id="btn-q1" class="bg-rose-500 hover:bg-rose-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">
                         Comprobar
                     </button>
@@ -104,10 +118,10 @@
                 </div>
             </div>
 
-            <!-- Pregunta 2: Primera Canción -->
+            <!-- Pregunta 2: Nombre de Gato -->
             <div id="q2" class="mb-6 p-5 bg-pink-50 rounded-xl shadow-lg border-l-4 border-rose-500">
-                <h2 class="text-xl font-semibold text-rose-600 mb-2">2. Nuestra Primera Melodía</h2>
-                <p class="text-sm text-gray-700 mb-3">Recuerda: ¿Cuál era el **nombre de la primera canción** que bailamos juntos?</p>
+                <h2 class="text-xl font-semibold text-rose-600 mb-2">2. Nuestro Futuro Pequeño</h2>
+                <p class="text-sm text-gray-700 mb-3">¿Cómo se va a llamar uno de ellos?</p>
                 <div class="flex items-center space-x-3">
                     <input type="text" id="q2-input" placeholder="Escribe el nombre aquí..." class="flex-grow p-2 border-2 border-pink-200 rounded-lg focus:ring-rose-500 focus:border-rose-500 transition">
                     <button onclick="checkAnswer(2)" id="btn-q2" class="bg-rose-500 hover:bg-rose-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">
@@ -117,12 +131,12 @@
                 </div>
             </div>
 
-            <!-- Pregunta 3: Moneda del Viaje -->
+            <!-- Pregunta 3: Ciudad Italiana -->
             <div id="q3" class="mb-6 p-5 bg-pink-50 rounded-xl shadow-lg border-l-4 border-rose-500">
-                <h2 class="text-xl font-semibold text-rose-600 mb-2">3. El Viaje a Tielmes</h2>
-                <p class="text-sm text-gray-700 mb-3">¿En qué **moneda** me ibas a pagar el trayecto de vuelta a Tielmes?</p>
+                <h2 class="text-xl font-semibold text-rose-600 mb-2">3. Promesa Italiana</h2>
+                <p class="text-sm text-gray-700 mb-3">¿A qué ciudad de Italia te dije que te iba a llevar la primera vez que nos vimos en el Perdernoso?</p>
                 <div class="flex items-center space-x-3">
-                    <input type="text" id="q3-input" placeholder="Escribe la moneda" class="flex-grow p-2 border-2 border-pink-200 rounded-lg focus:ring-rose-500 focus:border-rose-500 transition">
+                    <input type="text" id="q3-input" placeholder="Escribe la ciudad" class="flex-grow p-2 border-2 border-pink-200 rounded-lg focus:ring-rose-500 focus:border-rose-500 transition">
                     <button onclick="checkAnswer(3)" id="btn-q3" class="bg-rose-500 hover:bg-rose-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">
                         Comprobar
                     </button>
@@ -131,21 +145,25 @@
             </div>
         </main>
 
-        <!-- Sección de Resultado (Inicialmente Oculta) -->
+        <!-- Sección de Resultado (Puzle) -->
         <section id="result-section" class="mt-8 hidden opacity-0">
-            <h2 class="font-sacramento text-5xl text-rose-red mb-4">¡LO LOGRASTE! Eres Increíble 🥂</h2>
-            <div class="clue-box p-6 rounded-2xl">
-                <p class="text-lg font-semibold text-gray-800 mb-4">
-                    Este es el nombre del lugar del evento:
+            <h2 class="font-sacramento text-5xl text-rose-red mb-4">¡Nivel Completado! Eres la Mejor 🏆</h2>
+            <div class="puzzle-box p-6 rounded-2xl text-center">
+                
+                <p class="text-xl font-bold text-gray-800 mb-4 bg-yellow-100 p-2 rounded-lg border border-yellow-300">
+                    Esto es más que un simple puzle, es una pequeña pista del sitio a donde vamos a cenar.
                 </p>
-                <p class="text-4xl font-mono text-rose-red mb-6 tracking-wider bg-pink-100 p-3 rounded-lg">
-                    Sdodflr gh od Suhqvd
+
+                <a href="https://im-a-puzzle.com/share/21d09703d325acc" target="_blank" class="block w-full bg-rose-500 hover:bg-rose-600 text-white font-bold py-3 px-4 rounded-xl transition duration-300 transform hover:scale-105 text-lg shadow-md mb-4">
+                    <i data-lucide="puzzle" class="inline-block w-6 h-6 mr-2 align-middle"></i>
+                    Ir al Puzle Secreto
+                </a>
+                
+                <p class="text-sm text-gray-700 font-medium mt-4">
+                    La siguiente pista no se desbloquea hasta que no me pases el puzle totalmente hecho
                 </p>
-                <p class="text-sm text-gray-600 italic mb-2">
-                    No creías que te lo iba a dar tan fácil, ¿verdad?
-                </p>
-                <p class="text-sm text-gray-700 font-medium">
-                    Si de verdad te gusta la historia conocerás el cifrado, además convives con él a diario. **(Desplazamiento de tres posiciones)**, ¡ya me agradecerás esto último! 😉
+                <p class="text-3xl mt-2">
+                    😊
                 </p>
             </div>
         </section>
@@ -189,18 +207,19 @@
                 return;
             }
 
+            // Normalizar la entrada a minúsculas para comparaciones flexibles
+            const lowerValue = value.toLowerCase();
+
             // Lógica de validación
             if (qNum === 1) {
-                // P1: Cualquier número mayor de 19
-                const numValue = parseInt(value, 10);
-                isCorrect = !isNaN(numValue) && numValue > 19;
+                // P1: 2 o 'dos'
+                isCorrect = lowerValue === '2' || lowerValue === 'dos';
             } else if (qNum === 2) {
-                // P2: Contiene la palabra "droga" (case-insensitive)
-                isCorrect = value.toLowerCase().includes('droga');
+                // P2: 'mussolini' o 'musolini'
+                isCorrect = lowerValue === 'mussolini' || lowerValue === 'musolini';
             } else if (qNum === 3) {
-                // P3: Contiene la palabra "rupia" o "rupias" (case-insensitive)
-                const lowerValue = value.toLowerCase();
-                isCorrect = lowerValue.includes('rupia') || lowerValue.includes('rupias');
+                // P3: 'milán', 'milan', o 'milano'
+                isCorrect = lowerValue === 'milán' || lowerValue === 'milan' || lowerValue === 'milano';
             }
 
             // Actualizar estado
@@ -235,38 +254,36 @@
                 
                 // Mostrar la sección de resultado con animación
                 resultSection.classList.remove('hidden', 'opacity-0');
-                resultSection.classList.add('clue-reveal');
+                resultSection.classList.add('puzzle-reveal');
 
-                // Ocultar el quiz (opcional)
+                // Ocultar el quiz
                 document.getElementById('quiz-container').classList.add('hidden');
                 
                 // Mensaje de felicitación
-                showCustomMessage("¡Felicidades! Has ganado el derecho a descubrir la pista. ¡Te quiero!", 'success');
+                showCustomMessage("¡Felicidades! Has ganado el derecho a descubrir la siguiente etapa. ¡A por el puzle!", 'success');
             }
         }
 
         /**
-         * Muestra un mensaje temporal en la interfaz de usuario (usando el div de error como pop-up).
+         * Muestra un mensaje temporal en la interfaz de usuario.
          * @param {string} message - El mensaje a mostrar.
          * @param {string} type - Tipo de mensaje ('error', 'success', 'warning').
          */
         function showCustomMessage(message, type) {
             const msgBox = document.getElementById('error-message');
-            const [title, body] = message.split('. ');
+            // Nota: Aquí se usa el div de error como un pop-up genérico para mensajes.
             
             // Configuración de estilos y texto
-            msgBox.innerHTML = `<p class="font-bold">${title}</p><p class="text-sm">${body || ''}</p>`;
+            msgBox.innerHTML = `<p class="font-bold">${message}</p>`;
 
             // Adaptar estilos según el tipo
-            msgBox.className = 'mt-4 p-3 border-l-4 rounded-lg';
+            msgBox.className = 'mt-4 p-3 border-l-4 rounded-lg transition-opacity duration-300';
             if (type === 'error') {
                 msgBox.classList.add('bg-red-100', 'border-red-500', 'text-red-700');
             } else if (type === 'success') {
                 msgBox.classList.add('bg-green-100', 'border-green-500', 'text-green-700');
-                msgBox.innerHTML = `<p class="font-bold">¡Respuesta Correcta!</p><p class="text-sm">${message}</p>`;
             } else if (type === 'warning') {
                 msgBox.classList.add('bg-yellow-100', 'border-yellow-500', 'text-yellow-700');
-                msgBox.innerHTML = `<p class="font-bold">Atención</p><p class="text-sm">${message}</p>`;
             }
 
             // Mostrar y ocultar después de 4 segundos
