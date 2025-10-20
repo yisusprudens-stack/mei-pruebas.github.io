@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Mi Querida Mei - Nivel 2</title>
+    <title>Para Mi Querida Mei - Nivel Final</title>
     <!-- Carga de Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Carga de la fuente Sacramento para un toque romántico y Lucide para iconos -->
@@ -47,20 +47,21 @@
             display: inline-block;
         }
         
-        /* Animación de aparición para el resultado/puzle */
+        /* Animación de aparición para el resultado/pista */
         @keyframes reveal {
             0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
         }
-        .puzzle-reveal {
+        .clue-reveal {
             animation: reveal 1.5s ease-out forwards;
         }
 
         /* Estilo para el contenedor de la pista */
-        .puzzle-box {
+        .clue-box {
             background-color: white;
             border: 3px solid var(--pink-romantic);
             box-shadow: 0 10px 30px rgba(255, 105, 180, 0.4);
+            text-align: left;
         }
 
         /* Clases de estado para los iconos */
@@ -96,21 +97,21 @@
         <!-- Cabecera Romántica -->
         <header class="text-center mb-8">
             <h1 class="font-sacramento text-6xl text-rose-red mb-2 animate-pulse">
-                Segundo Nivel, Mei <span class="heartbeat" style="color: var(--pink-romantic);">❤️</span>
+                El Triple de Amor <span class="heartbeat" style="color: var(--pink-romantic);">❤️</span>
             </h1>
             <p class="text-gray-600 text-lg">
-                ¡Demuéstrame que prestas atención a nuestro futuro gatuno y nuestros planes de viaje!
+                Estas tres preguntas demuestran quién eres tú para mí.
             </p>
         </header>
 
         <!-- Contenedor del Quiz -->
         <main id="quiz-container">
-            <!-- Pregunta 1: Número Máximo de Gatos -->
+            <!-- Pregunta 1: Primer Amor -->
             <div id="q1" class="mb-6 p-5 bg-pink-50 rounded-xl shadow-lg border-l-4 border-rose-500">
-                <h2 class="text-xl font-semibold text-rose-600 mb-2">1. La Familia Gatuna</h2>
-                <p class="text-sm text-gray-700 mb-3">¿Cuántos gatos **MÁXIMO** vamos a tener en casa?</p>
+                <h2 class="text-xl font-semibold text-rose-600 mb-2">1. La Memoria Más Dulce</h2>
+                <p class="text-sm text-gray-700 mb-3">¿Cuál es el **nombre de mi primer amor**?</p>
                 <div class="flex items-center space-x-3">
-                    <input type="text" id="q1-input" placeholder="Escribe el número o la palabra" class="flex-grow p-2 border-2 border-pink-200 rounded-lg focus:ring-rose-500 focus:border-rose-500 transition">
+                    <input type="text" id="q1-input" placeholder="Escribe el nombre" class="flex-grow p-2 border-2 border-pink-200 rounded-lg focus:ring-rose-500 focus:border-rose-500 transition">
                     <button onclick="checkAnswer(1)" id="btn-q1" class="bg-rose-500 hover:bg-rose-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">
                         Comprobar
                     </button>
@@ -118,10 +119,10 @@
                 </div>
             </div>
 
-            <!-- Pregunta 2: Nombre de Gato -->
+            <!-- Pregunta 2: Persona Favorita -->
             <div id="q2" class="mb-6 p-5 bg-pink-50 rounded-xl shadow-lg border-l-4 border-rose-500">
-                <h2 class="text-xl font-semibold text-rose-600 mb-2">2. Nuestro Futuro Pequeño</h2>
-                <p class="text-sm text-gray-700 mb-3">¿Cómo se va a llamar uno de ellos?</p>
+                <h2 class="text-xl font-semibold text-rose-600 mb-2">2. El Título Más Importante</h2>
+                <p class="text-sm text-gray-700 mb-3">¿Cuál es el **nombre de mi persona favorita**?</p>
                 <div class="flex items-center space-x-3">
                     <input type="text" id="q2-input" placeholder="Escribe el nombre aquí..." class="flex-grow p-2 border-2 border-pink-200 rounded-lg focus:ring-rose-500 focus:border-rose-500 transition">
                     <button onclick="checkAnswer(2)" id="btn-q2" class="bg-rose-500 hover:bg-rose-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">
@@ -131,12 +132,12 @@
                 </div>
             </div>
 
-            <!-- Pregunta 3: Ciudad Italiana -->
+            <!-- Pregunta 3: Futura Mujer -->
             <div id="q3" class="mb-6 p-5 bg-pink-50 rounded-xl shadow-lg border-l-4 border-rose-500">
-                <h2 class="text-xl font-semibold text-rose-600 mb-2">3. Promesa Italiana</h2>
-                <p class="text-sm text-gray-700 mb-3">¿A qué ciudad de Italia te dije que te iba a llevar la primera vez que nos vimos en el Perdernoso?</p>
+                <h2 class="text-xl font-semibold text-rose-600 mb-2">3. El Futuro Que Sueño</h2>
+                <p class="text-sm text-gray-700 mb-3">¿Cuál es el **nombre de mi futura mujer**?</p>
                 <div class="flex items-center space-x-3">
-                    <input type="text" id="q3-input" placeholder="Escribe la ciudad" class="flex-grow p-2 border-2 border-pink-200 rounded-lg focus:ring-rose-500 focus:border-rose-500 transition">
+                    <input type="text" id="q3-input" placeholder="Escribe el nombre" class="flex-grow p-2 border-2 border-pink-200 rounded-lg focus:ring-rose-500 focus:border-rose-500 transition">
                     <button onclick="checkAnswer(3)" id="btn-q3" class="bg-rose-500 hover:bg-rose-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">
                         Comprobar
                     </button>
@@ -145,26 +146,26 @@
             </div>
         </main>
 
-        <!-- Sección de Resultado (Puzle) -->
+        <!-- Sección de Resultado (Pista Final) -->
         <section id="result-section" class="mt-8 hidden opacity-0">
-            <h2 class="font-sacramento text-5xl text-rose-red mb-4">¡Nivel Completado! Eres la Mejor 🏆</h2>
-            <div class="puzzle-box p-6 rounded-2xl text-center">
-                
-                <p class="text-xl font-bold text-gray-800 mb-4 bg-yellow-100 p-2 rounded-lg border border-yellow-300">
-                    Esto es más que un simple puzle, es una pequeña pista del sitio a donde vamos a cenar.
+            <h2 class="font-sacramento text-5xl text-rose-red mb-4 text-center">¡PLENO DE AMOR! La Pista Final 💖</h2>
+            <div class="clue-box p-6 rounded-2xl">
+                <p class="text-sm text-gray-700 mb-4">
+                    En nuestra primera cita hicimos muchas cosas pero hubo una en especial que me puso los pelos de punta, algo que llevaba tiempo queriendo hacer pero no hice, algo que tú ya habías hecho pero te resultó especial compartir conmigo. Nada como una primera vez eh, pero siempre hay una segunda y no hay dos sin tres, pero en diferentes versiones, aunque claro, todos tenemos una favorita, ¿no? No sé si te dije la mía, pero en la de antes de que ese mejor amigo encontrase a su otra mitad hubo un tema, uno que me consiguió poner igualmente los pelos de punta, **en este tema está la clave**, pero como toda clave viene con adivinanza…
                 </p>
 
-                <a href="https://im-a-puzzle.com/share/21d09703d325acc" target="_blank" class="block w-full bg-rose-500 hover:bg-rose-600 text-white font-bold py-3 px-4 rounded-xl transition duration-300 transform hover:scale-105 text-lg shadow-md mb-4">
-                    <i data-lucide="puzzle" class="inline-block w-6 h-6 mr-2 align-middle"></i>
-                    Ir al Puzle Secreto
-                </a>
+                <div class="mt-5 p-4 bg-pink-100 border-l-4 border-rose-400 text-gray-900 font-mono text-lg rounded-md shadow-inner">
+                    <p class="font-bold mb-2 text-rose-red">La Adivinanza Secreta:</p>
+                    <p class="whitespace-pre-wrap">“En la ruta que no figura en los mapas,
+cuatro embestidas rompen el aire.
+Anótalas con la señal del aumento,
+y fírmalo con la décima de los ladrillos del decir”</p>
+                </div>
                 
-                <p class="text-sm text-gray-700 font-medium mt-4">
-                    La siguiente pista no se desbloquea hasta que no me pases el puzle totalmente hecho
+                <p class="text-center mt-6 text-sm italic text-gray-500">
+                    ¡Te quiero! ¡Nos vemos pronto!
                 </p>
-                <p class="text-3xl mt-2">
-                    😊
-                </p>
+
             </div>
         </section>
 
@@ -202,24 +203,16 @@
             document.getElementById('error-message').classList.add('hidden');
 
             if (!value) {
-                // Mostrar un mensaje de error si no hay valor
                 showCustomMessage("Por favor, introduce una respuesta antes de comprobar.", 'warning');
                 return;
             }
 
-            // Normalizar la entrada a minúsculas para comparaciones flexibles
-            const lowerValue = value.toLowerCase();
+            // Normalizar la entrada a minúsculas y quitar acentos (para aceptar María/Maria)
+            const lowerValue = value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
-            // Lógica de validación
-            if (qNum === 1) {
-                // P1: 2 o 'dos'
-                isCorrect = lowerValue === '2' || lowerValue === 'dos';
-            } else if (qNum === 2) {
-                // P2: 'mussolini' o 'musolini'
-                isCorrect = lowerValue === 'mussolini' || lowerValue === 'musolini';
-            } else if (qNum === 3) {
-                // P3: 'milán', 'milan', o 'milano'
-                isCorrect = lowerValue === 'milán' || lowerValue === 'milan' || lowerValue === 'milano';
+            // Lógica de validación: Acepta 'maria' o 'mei' para las tres preguntas.
+            if (qNum >= 1 && qNum <= 3) {
+                isCorrect = lowerValue === 'maria' || lowerValue === 'mei';
             }
 
             // Actualizar estado
@@ -254,13 +247,13 @@
                 
                 // Mostrar la sección de resultado con animación
                 resultSection.classList.remove('hidden', 'opacity-0');
-                resultSection.classList.add('puzzle-reveal');
+                resultSection.classList.add('clue-reveal');
 
                 // Ocultar el quiz
                 document.getElementById('quiz-container').classList.add('hidden');
                 
                 // Mensaje de felicitación
-                showCustomMessage("¡Felicidades! Has ganado el derecho a descubrir la siguiente etapa. ¡A por el puzle!", 'success');
+                showCustomMessage("¡Triple acierto! Has desbloqueado la pista final. ¡Enhorabuena!", 'success');
             }
         }
 
@@ -271,7 +264,6 @@
          */
         function showCustomMessage(message, type) {
             const msgBox = document.getElementById('error-message');
-            // Nota: Aquí se usa el div de error como un pop-up genérico para mensajes.
             
             // Configuración de estilos y texto
             msgBox.innerHTML = `<p class="font-bold">${message}</p>`;
